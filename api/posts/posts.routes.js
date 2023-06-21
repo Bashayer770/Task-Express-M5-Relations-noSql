@@ -24,6 +24,7 @@ router.param("postId", async (req, res, next, postId) => {
 
 router.get("/", postsGet);
 router.post("/add-tag", createTag);
+router.get("tags");
 
 router.delete("/:postId", postsDelete);
 

@@ -46,6 +46,15 @@ exports.postsGet = async (req, res, next) => {
   }
 };
 
+exports.tagsGet = async (req, res, next) => {
+  try {
+    const tags = await Post.find().populate("tags");
+    res.json(tags);
+  } catch (error) {
+    next(error);
+  }
+};
+
 exports.addTag = async (req, res, next) => {
   try {
     const tagId = req.params;
